@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>test</title>
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<style>
+			* {
+				font-family: "Ubuntu";
+			}
+			body {
+				background-color: #CFD8DC;
+				margin: 0px;
+				margin-top: 0px;
+				overflow: hidden;
+			}
+			#header {
+				text-align: left;
+				width: 100%;
+				height: 5em;
+				display: inline-block;
+				background-color: #2196F3;
+				box-shadow: 0px 4px 4px #888888;
+
+			}
+			#header p {
+				margin-left: 5%;
+				margin-top: 1em;
+				font-size: 24pt;
+			}
+
+			#selector {
+				margin-left: auto;
+    		margin-right: auto;
+				margin-top: 1em;
+				width: 13em;
+				height: auto;
+				display: table;
+
+			}
+
+			#selector > div {
+				font-size: 18pt;
+				margin-right: 2em;
+				background-color: #64B5F6;
+				width: 4.5em;
+				display: table-cell;
+				padding-left:10px;
+				padding-right: 10px;
+			}
+
+			#loginContainer {
+				text-align: center;
+				width: 100%;
+				position: absolute;
+				transition: 0.5s ease-in-out;
+			}
+
+			form input {
+				height: 4em;
+				width: 20em;
+				font-size: 12pt;
+				text-align: center;
+			}
+
+			#login {
+				display: inline-block;
+				text-align: center;
+				font-size: 15pt
+			}
+
+			#signupContainer {
+				text-align: center;
+				width: 100%;
+				position: absolute;
+				left: 100%;
+				transition: 0.5s ease-in-out
+			}
+
+			#signup {
+				display: inline-block;
+				text-align: center;
+				font-size: 15pt
+			}
+		</style>
+	</head>
+	<body>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#signupSelector").click(function(){
+					$("#loginContainer").css({"left": "-100%", "opacity": '0'});
+					$("#signupContainer").css({"left": "0%", "opacity": '1'})
+				});
+				$("#loginSelector").click(function(){
+					$("#signupContainer").css({"left": "100%", "opacity": '0'});
+					$("#loginContainer").css({"left": "0%", "opacity": '1'});
+				});
+			});
+		</script>
+
+		<div id='header'><p>Sample web app</p></div>
+		<div id='filler' style='height: 8em; width: 100%'><div>
+
+		<div id='selector'>
+			<div id='loginSelector'><p align=middle>Login </p></div>
+			<div id='signupSelector' style="border-left: 1px solid #9E9E9E"><p align=middle> Sign up</p></div>
+		</div>
+
+		<div id='loginContainer' class='forms'>
+			<form id="login" action="/login" method="post">
+				<h3>Log In</h3>
+				<input type="text" name="username" placeholder="Username"><br/>
+				<input type='password' name='password' placeholder="Password"><br>
+				<input type="submit">
+			</form>
+		</div>
+
+		<div id='signupContainer' class='forms'>
+			<form id="signup" action="/signup" method="post">
+				<h3>Sign up</h3>
+				<input type="text" name="username" placeholder="Username"><br>
+				<input type="password" name="password" placeholder="Password"><br>
+				<input type="email" name="email" placeholder="Email Address"><br>
+				<input type="submit">
+			</form>
+		</div>
+
+	</body>
+</html>

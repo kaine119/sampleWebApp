@@ -1,0 +1,19 @@
+{
+  "name": "mongodb-test",
+  "version": "1.0.0",
+  "description": "mongoDB test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Blah\""
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "kaine119",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "mongodb": "^2.1.2",
+    "synchronize": "^0.9.14"
+  }
+}

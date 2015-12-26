@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>test</title>
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<style>
+			* {
+				font-family: "Ubuntu";
+			}
+			body {
+				background-color: #CFD8DC;
+				margin: 0px;
+				margin-top: 0px;
+				overflow: hidden;
+			}
+			#header {
+				text-align: left;
+				width: 100%;
+				height: 5em;
+				display: inline-block;
+				background-color: #2196F3;
+				box-shadow: 0px 4px 4px #888888;
+
+			}
+			#header p {
+				margin-left: 5%;
+				margin-top: 1em;
+				font-size: 24pt;
+			}
+
+			#selector {
+				margin-left: auto;
+    		margin-right: auto;
+				margin-top: 1em;
+				width: 13em;
+				height: auto;
+				display: table;
+
+			}
+
+			#selector > div {
+				font-size: 18pt;
+				margin-right: 2em;
+				background-color: #64B5F6;
+				width: 4.5em;
+				display: table-cell;
+				padding-left:10px;
+				padding-right: 10px;
+			}
+
+			#loginContainer {
+				text-align: center;
+				width: 100%;
+				position: absolute;
+				transition: 0.5s ease-in-out;
+			}
+
+			form input {
+				height: 4em;
+				width: 20em;
+				font-size: 12pt;
+				text-align: center;
+			}
+
+			#login {
+				display: inline-block;
+				text-align: center;
+				font-size: 15pt
+			}
+
+		</style>
+	</head>
+	<body>
+
+
+		<div id='header'><p>Sample web app</p></div>
+		<div id='filler' style='height: 8em; width: 100%'><div>
+
+		<div id='loginContainer' class='forms'>
+			<form id="login" action="../login" method="post">
+				<h3>Log In</h3>
+				<input type="text" name="username" placeholder="Username"><br/>
+				<input type='password' name='password' placeholder="Password"><br>
+				<h5 style="color: #F44336;">Incorrect password, please try again</h5>
+				<input type="submit">
+			</form>
+		</div>
+
+
+	</body>
+</html>
