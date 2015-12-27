@@ -22,6 +22,9 @@ var html = require('./html-format')
 
 /* End of declarations. */
 
+// Hosting for css files
+app.use(express.static('res'));
+
 //Main login page
 app.get("/", function(req, res){
 	res.sendFile(__dirname + "/index.html")
