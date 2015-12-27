@@ -10,4 +10,9 @@ node index.js
 ```
 to start the server.
 
-Access the webapp in a browser on [http://localhost:3000](http://localhost:3000)
+Access the webapp in a browser on [http://localhost:3000](http://localhost:3000).
+
+# Screenshots
+![Login Page](./screenshots/loginPage.png)
+![Signup page](./screenshots/signupPage.png)
+![Dashboard](./screenshots/dashPage.png)

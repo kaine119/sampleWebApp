@@ -3,6 +3,9 @@ var assert = require('assert');
 var ObjectId = require("mongodb").ObjectId;
 var url = "mongodb://localhost:27017/gci_task";
 
+//Password hasing mudule
+var passwordHash = require('password-hash');
+
 var exports = module.exports
 
 // Insert a user into db
@@ -14,7 +17,7 @@ exports.insertUser = function(name, pwrd, email, db, existingCallback, callback)
 		} else {
 			db.collection('users').insertOne( {
 				"username": name,
-				"password": pwrd,
+				"password": passwordHash.generate(pwrd),
 				"email": email
 			}, function(err, result){
 				assert.equal(err, null);
@@ -29,7 +32,7 @@ exports.loginUser = function(name, password, db, successCallback, failCallback) 
 	var cursor = db.collection('users').find({"username": name});
 	cursor.each(function(err, user){
 		assert.equal(err, null);
-		if (user != null && user.username == name && user.password == password) {
+		if (user != null && user.username == name && passwordHash.verify(password, user.password)) {
 			console.log("success!")
 			successCallback();
 		}
